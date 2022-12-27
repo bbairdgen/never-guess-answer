@@ -1,0 +1,25 @@
+:root {
+ --drkgreen: #395144;
+ --lhtgreen: #4e6c50;
+ --brown: #aa8b56;
+ --cream: #f0ebce;
+}
+
+* {
+    font-family: 'Century Gothic', 'Times New Roman', serif;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--drkgreen);
+}
+
+header {
+    background-color: var(--lhtgreen);
+    color: var(--cream);
+}
+
+button {
+    background-color: var(--lhtgreen);
+    color: var(--cream);
+}
