@@ -28,6 +28,10 @@ h1 {
     margin: 1em;
 }
 
+h2 {
+    font-size: 300%;
+}
+
 header {
     background-color: var(--lhtgreen);
     color: var(--cream);
@@ -36,16 +40,35 @@ header {
     font-size: 200%;
 }
 
+label, 
+#time-score,
+#msg {
+    font-size: 200%;
+}
+
+li {
+    font-size: 150%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
 p, 
 #highscores {
     font-size: 150%;
     line-height: 125%;
 }
 
-label, 
-#time-score,
-#msg {
-    font-size: 200%;
+#highscores-btn {
+    display: flex;
+    padding: .5em 0em .2em 2em;
+    all: unset;
+    cursor: pointer;
+    margin-left: .5em;
+}
+
+#initials {
+    font-size: 150%; 
+    margin-left: 1em;
 }
 
 #q1 {
@@ -55,31 +78,18 @@ label,
 
 }
 
-#highscores-btn {
+#quizbox {
     display: flex;
-    padding: .5em 0em .2em 2em;
-    all: unset;
-    cursor: pointer;
-
-}
-
-#timer {
-    display: flex;
-    padding: .5em 2em .2em 0em;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 8em 40em;
+    text-align: center;
 }
 
 #start-quiz {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 8em 40em;
-    text-align: center;
-}
-
-#quizbox {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     margin: 8em 40em;
     text-align: center;
 }
@@ -92,29 +102,18 @@ label,
     text-align: center;
 }
 
+#timer {
+    display: flex;
+    padding: .5em 2em .2em 0em;
+}
+
 .answer-btn,
 #submit-score,
 #display-score {
     display: none;
 }
 
-#initials {
-    font-size: 150%; 
-    margin-left: 1em;
-}
-
-h2 {
-    font-size: 300%;
-}
-
-li {
-    font-size: 150%;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
 .button {
     display: inline-flex;
     justify-content: center;
 }
-
