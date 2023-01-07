@@ -121,7 +121,7 @@ answer1El.addEventListener('click', function () {
         document.getElementById('msg').innerHTML = 'Correct';
         setTimeout(function () {
             document.getElementById('msg').innerHTML = '';
-        }, 1000);
+        }, 2000);
         
         // quiz is over when all questions are answered
         if (i === myQuestions.length) {
@@ -139,7 +139,7 @@ answer1El.addEventListener('click', function () {
         document.getElementById('msg').innerHTML = 'Wrong';
         setTimeout(function () {
             document.getElementById('msg').innerHTML = '';
-        }, 1000);
+        }, 2000);
         
         // quiz is over when all questions are answered
         if (i === myQuestions.length) {
@@ -159,7 +159,7 @@ answer2El.addEventListener('click', function () {
         document.getElementById('msg').innerHTML = 'Correct';
         setTimeout(function () {
             document.getElementById('msg').innerHTML = '';
-        }, 1000);
+        }, 2000);
         
         // quiz is over when all questions are answered
         if (i === myQuestions.length) {
@@ -179,7 +179,7 @@ answer2El.addEventListener('click', function () {
         document.getElementById('msg').innerHTML = 'Wrong';
         setTimeout(function () {
             document.getElementById('msg').innerHTML = '';
-        }, 1000);
+        }, 2000);
         
         // quiz is over when all questions are answered
         if (i === myQuestions.length) {
@@ -199,7 +199,7 @@ answer3El.addEventListener('click', function () {
         document.getElementById('msg').innerHTML = 'Correct';
         setTimeout(function () {
             document.getElementById('msg').innerHTML = '';
-        }, 1000);
+        }, 2000);
         
         // quiz is over when all questions are answered
         if (i === myQuestions.length) {
@@ -218,7 +218,7 @@ answer3El.addEventListener('click', function () {
         document.getElementById('msg').innerHTML = 'Wrong';
         setTimeout(function () {
             document.getElementById('msg').innerHTML = '';
-        }, 1000);
+        }, 2000);
         
         // quiz is over when all questions are answered
         if (i === myQuestions.length) {
@@ -241,7 +241,7 @@ answer4El.addEventListener('click', function () {
         document.getElementById('msg').innerHTML = 'Correct';
         setTimeout(function () {
             document.getElementById('msg').innerHTML = '';
-        }, 1000);
+        }, 2000);
         
         // quiz is over when all questions are answered
         if (i === myQuestions.length) {
@@ -260,7 +260,7 @@ answer4El.addEventListener('click', function () {
         document.getElementById('msg').innerHTML = 'Wrong';
         setTimeout(function () {
             document.getElementById('msg').innerHTML = '';
-        }, 1000);
+        }, 2000);
         
         // quiz is over when all questions are answered
         if (i === myQuestions.length) {
@@ -279,8 +279,7 @@ startBtn.addEventListener('click', startQuiz);
 // At end of quiz, score (time) is saved with initials
 function scoreInput() {
     
-    scoreEl.style = 'display:flex'
-    displayScoreEl.style = "display:flex"
+    scoreEl.style = 'display:inline-flex'
     
     questionEl.style = "display:none";
     answer1El.style = "display:none"
@@ -299,15 +298,15 @@ clearBtn.addEventListener('click', function () {
 
 function displayHighscore() {
     startQuizEl.style = "display:none";
-    displayScoreEl.style = "display:block";
-    scoreEl.style = "display:none"
-    timerEl.textContent = 'Time: '
+    quizboxEl.style = "display:none";
+    displayScoreEl.style = "display:flex";
+    scoreEl.style = "display:none";
+    timerEl.textContent = 'Time: ';
+    clearInterval(timerInterval);
 }
+
 // When 'View Highscores' is clicked, stored highscores are displayed
 highscoreBtn.addEventListener('click', displayHighscore);
-
-
-
 
 function displaySubmitted() {
     initials = localStorage.getItem('initials')
@@ -318,7 +317,6 @@ function displaySubmitted() {
         document.querySelector('#highscores').append(tagLi)
 
 }
-
 
 submitBtn.addEventListener('click', function(event) {
     event.preventDefault();
@@ -332,6 +330,8 @@ if (initials === "") {
     localStorage.setItem('initials', initials);
     localStorage.setItem('timerCount', timerCount)
     errorEl.textContent = ''
+    displayScoreEl.style = "display:inline-flex"
+    scoreEl.style = "display:none"
     displaySubmitted();
 }
 })
