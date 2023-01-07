@@ -12,7 +12,6 @@
 
 <body>
     <header>
-        <!-- TODO: This may have to be a button instead of a div container. -->
         <button id="highscores-btn">View Highscores</button>
         <div id="timer">Time: </div>
     </header>
@@ -25,30 +24,33 @@
             <button id="a4" class="answer-btn"></button>
             <div id="msg"></div>
         </div>
-            <div id="start-quiz">
-                <h1>Coding Quiz Challenge</h1>
-                <p id="intro">Try to answer the following code-related questions within the time limit. Keep
-                    in mind
-                    that
-                    incorrect answers will penalize your score/time by ten seconds!</p>
-                <button class="start-btn">Start Quiz</button>
-            </div>
-            <div id="submit-score">
-                <form method="POST" class="score">
+        <div id="start-quiz">
+            <h1>Coding Quiz Challenge</h1>
+            <p id="intro">Try to answer the following code-related questions within the time limit. Keep
+                in mind
+                that
+                incorrect answers will penalize your score/time by ten seconds!</p>
+            <button class="start-btn">Start Quiz</button>
+        </div>
+        <div id="submit-score">
+            <form method="POST" class="score">
+                <div id="form">
                     <label for="initials">Please place your initials in the box</label>
                     <input type="text" name="initials" id="initials" placeholder="Initials" />
                     <div class="timer" id="time-score"></div>
-                    <div id="error"></div>
-                    <button id="submit-btn">Submit Score</button>
-                </form>
-            </div>
-            <div id="display-score">
-                <h2>Saved Scores</h2>
-                <ul id="highscores">TEST SPACE</ul>
+                </div>
+                <div id="error"></div>
+                <button id="submit-btn">Submit Score</button>
+            </form>
+        </div>
+        <div id="display-score">
+            <h2>Saved Scores</h2>
+            <ul id="highscores"></ul>
+            <div class="button">
                 <button id="home">Home</button>
                 <button id="clear-scores">Clear Scores</button>
             </div>
-        
+        </div>
     </section>
     <script src="assets/js/script.js"></script>
 </body>
