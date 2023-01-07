@@ -79,6 +79,7 @@ function startQuiz() {
     countdown()
 }
 
+// timer functiontion
 function countdown() {
     
     timerInterval = setInterval(function () {
@@ -112,6 +113,7 @@ function showQuestions() {
     answer4El.textContent = myQuestions[i].optionD
 }
 
+// allows the quiz answers to act as buttons and progress the quiz and test to see if the correct answer is used.
 answer1El.addEventListener('click', function () {
     // Following question is presented when question is answered correctly or incorrectly
     if (myQuestions[i].correctOption === 'optionA') {
@@ -150,6 +152,7 @@ answer1El.addEventListener('click', function () {
     }
 })
 
+// allows the quiz answers to act as buttons and progress the quiz and test to see if the correct answer is used.
 answer2El.addEventListener('click', function () {
     // Following question is presented when question is answered correctly or incorrectly
     if (myQuestions[i].correctOption === 'optionB') {
@@ -190,6 +193,7 @@ answer2El.addEventListener('click', function () {
     }
 })
 
+// allows the quiz answers to act as buttons and progress the quiz and test to see if the correct answer is used.
 answer3El.addEventListener('click', function () {
     // Following question is presented when question is answered correctly or incorrectly
     if (myQuestions[i].correctOption === 'optionC') {
@@ -232,6 +236,7 @@ answer3El.addEventListener('click', function () {
     
 })
 
+// allows the quiz answers to act as buttons and progress the quiz and test to see if the correct answer is used.
 answer4El.addEventListener('click', function () {
     // Following question is presented when question is answered correctly or incorrectly
     if (myQuestions[i].correctOption === 'optionD') {
@@ -273,7 +278,7 @@ answer4El.addEventListener('click', function () {
     
 })
 
-// quizContainer.innterHTML = output.join('');
+// This is the button on the home page to start the quiz
 startBtn.addEventListener('click', startQuiz);
 
 // At end of quiz, score (time) is saved with initials
@@ -291,11 +296,13 @@ function scoreInput() {
     clearInterval(timerInterval);
 }
 
+// This button clears the highscore list and local storage
 clearBtn.addEventListener('click', function () {
     localStorage.clear();
     highscoreEl.textContent = ''
 })
 
+// this function allows the View Highscore button to direct user to the highscore screen while hiding all other screens.
 function displayHighscore() {
     startQuizEl.style = "display:none";
     quizboxEl.style = "display:none";
@@ -305,9 +312,10 @@ function displayHighscore() {
     clearInterval(timerInterval);
 }
 
-// When 'View Highscores' is clicked, stored highscores are displayed
+// When 'View Highscores' is clicked, the above function is executed.
 highscoreBtn.addEventListener('click', displayHighscore);
 
+// This adds a list element to the HTML and allows it to display the items in the local storage
 function displaySubmitted() {
     initials = localStorage.getItem('initials')
     timerCount = localStorage.getItem('timerCount')
@@ -318,11 +326,14 @@ function displaySubmitted() {
 
 }
 
+// commits the inputed initials to local storage. 
 submitBtn.addEventListener('click', function(event) {
     event.preventDefault();
 
 initials = document.querySelector('#initials').value;
 var errorEl = document.querySelector('#error')
+
+// This forces an individuals to input something
 if (initials === "") {
     
     errorEl.textContent = "You must add your initials!"
@@ -336,6 +347,7 @@ if (initials === "") {
 }
 })
 
+// This sends the you back to the home screen to take the quiz again, if desired
 homeBtn.addEventListener('click', function() {
     startQuizEl.style = "display:flex";
     displayScoreEl.style = "display:none";
